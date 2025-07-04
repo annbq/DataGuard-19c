@@ -2,3 +2,59 @@ Introduction to Oracle Data Guard
 - Basic components of Oracle Data Guard
 - Differences between physical, snapshot, and logical standby databases
 - The benefits of implementing Oracle Data Guard
+
+Oracle Data Guard is a high availability, disaster recovery, and data protection solution for Oracle databases. It ensures data availability and disaster recovery by maintaining one or more standby copies of a production (primary) database.
+
+🔍 What Is Oracle Data Guard?
+Oracle Data Guard allows you to:
+
+Maintain standby (copy) databases that are kept synchronized with the primary database.
+
+Automatically or manually failover to a standby database in case the primary database fails.
+
+Offload workloads like backups or reporting to standby databases.
+
+🔧 Key Features
+Feature	Description
+Physical Standby	Exact, block-for-block copy of the primary DB using redo logs
+Logical Standby	Read/write standby with transformed SQL; supports reporting
+Active Data Guard	Allows queries on the standby DB while it's applying redo
+Automatic Failover	Automatically switches to a standby DB using Data Guard Broker
+Switchover	Planned role reversal between primary and standby
+Redo Transport Services	Ships redo data from primary to standby DB
+Apply Services	Applies redo data to the standby to keep it current
+
+🧱 Data Guard Architecture
+Primary Database: The active, production database.
+
+Standby Database(s): Duplicates of the primary, can be:
+
+Physical Standby
+
+Logical Standby
+
+Snapshot Standby (temporary read-write for testing)
+
+Redo Logs: Changes to the primary database are written to redo logs.
+
+Redo Transport: These redo logs are transmitted to standby databases.
+
+Apply Process: Redo logs are applied on standby to reflect changes from the primary.
+
+✅ Benefits of Oracle Data Guard
+Disaster Recovery: Immediate switchover/failover in case of disaster.
+
+High Availability: Minimal downtime with automatic role transitions.
+
+Data Protection: Real-time data replication minimizes loss.
+
+Load Balancing: Use standby DBs for backups and reporting (Active Data Guard).
+
+Centralized Management: Via Data Guard Broker CLI or Oracle Enterprise Manager.
+
+📘 Use Cases
+Enterprise systems needing zero data loss (Maximum Protection mode).
+
+Systems requiring 24/7 availability (Active Data Guard with failover).
+
+Applications needing reporting offload or disaster recovery testing.
