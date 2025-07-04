@@ -1,1 +1,4 @@
 Introduction to Oracle Data Guard
+- Basic components of Oracle Data Guard
+- Differences between physical, snapshot, and logical standby databases
+- The benefits of implementing Oracle Data Guard
