@@ -25,6 +25,9 @@ Redo Transport Services	Ships redo data from primary to standby DB
 Apply Services	Applies redo data to the standby to keep it current
 
 🧱 Data Guard Architecture
+
+
+
 Primary Database: The active, production database.
 
 Standby Database(s): Duplicates of the primary, can be:
